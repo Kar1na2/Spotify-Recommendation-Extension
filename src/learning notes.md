@@ -19,7 +19,10 @@ The Goal of this project is to create a new song recommendation system based on 
 [3b783eb] 
 - set up the manifest files as well as the appropriate project structure
 
-
+[c6c8aa1]
+- ran wasm-pack build 
+- set up temporary html file
+- downloaded icons for extension
 
 
 **Things needed to be implemented** 
