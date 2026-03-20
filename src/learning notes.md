@@ -24,6 +24,11 @@ The Goal of this project is to create a new song recommendation system based on 
 - set up temporary html file
 - downloaded icons for extension
 
+[ed9d1ed]
+- filled in content.js, background.js, popup.js
+- fixed popup.html to include a button to show recommendations rather than showing automatically
+- created manifest.json because edge can't handle manifest_cr :/ 
+
 
 **Things needed to be implemented** 
 - The current song information will be automatically parsed 
