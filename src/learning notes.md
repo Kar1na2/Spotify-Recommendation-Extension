@@ -67,6 +67,9 @@ Chrome Extension --> Server json format
 
 Why do I need background :/ ? 
 Probably going to keep background.js just so that you can run the search switch tabs etc 
+^ background is the middleground between content.js and popup.js 
 
 Apparently if "activeTab" is in permissions, there's no need to have host_permissions need to look more into that one
 
+content.js -> "SONG_DETECTED" with payload 
+background.js -> receives message and payload -> relay payload to popup.js

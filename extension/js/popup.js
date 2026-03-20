@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("popup.js DOM fully loaded");
-
+    
+    // 1. Initial load: Get whatever is currently playing
     currentSong();
-})
+
+    // 2. Listen for live updates from background.js
+    chrome.runtime.onMessage.addListener((message) => {
+        if (message.type === 'UPDATE_POPUP' && message.song) {
+            displaySong(message.song);
+        }
+    });
+});
 
 async function currentSong() {
     const msg = await chrome.runtime.sendMessage({ type: 'GET_CURRENT_SONG'});
