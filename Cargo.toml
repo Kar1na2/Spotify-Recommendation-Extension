@@ -1,0 +1,40 @@
+[package]
+name = "wasm_core"
+version = "0.1.0"
+edition = "2024"
+authors = ["Kar1na <jspark6@dons.usfca.edu>"]
+description = "Spotify recommendation system tailored to introduce new songs to users"
+license = "GPL 3.0"
+repository = "https://github.com/Kar1na2/Spotify-Recommendation-Extension"
+readme = "README.md"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde-wasm-bindgen = "0.6"
+
+[dependencies.web-sys]
+version = "0.3.91"
+features = [
+  "console",
+  "Window",
+  "Document",
+  "Element",
+  "HtmlElement",
+  "Request",
+  "RequestInit",
+  "RequestMode",
+  "Response",
+  "Headers",
+]
+
+[dev-dependencies] 
+wasm-bindgen-test = "0.3.64"
+
+[profile.release]
+opt-level = "s"   # optimize for size
