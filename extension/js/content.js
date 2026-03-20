@@ -1,14 +1,20 @@
 // content_spotify.js — injected into open.spotify.com
+console.log('[SpotOn] content script injected');
 
 let wasmModule = null;
 let lastTrackId = null;
 
 async function loadWasm() {
     // Load the wasm-pack generated glue from extension's web_accessible_resources
-    const src = chrome.runtime.getURL('pkg/wasm_core.js');
-    const mod = await import(src);
-    await mod.default(); // calls wasm init()
-    return mod;
+    try {
+        const src = chrome.runtime.getURL('pkg/wasm_core.js');
+        const mod = await import(src);
+        await mod.default(); // calls wasm init()
+        return mod;
+    } catch (err) {
+        console.error('[SpotOn] WASM load failed:', err);
+        return null;
+    }
 }
 
 function parseSpotifyPage() {
@@ -87,3 +93,4 @@ async function init() {
 }
 
 init();
+init().catch(err => console.error('[SpotOn] init failed:', err));
