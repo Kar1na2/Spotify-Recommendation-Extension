@@ -1,8 +1,6 @@
-// content_spotify.js — injected into open.spotify.com
-console.log('[SpotOn] content script injected');
-
 let wasmModule = null;
-let lastTrackId = null;
+let lastTrackName = null;
+let lastTrackArtist = null;
 
 async function loadWasm() {
     // Load the wasm-pack generated glue from extension's web_accessible_resources
@@ -18,14 +16,7 @@ async function loadWasm() {
 }
 
 function parseSpotifyPage() {
-    const info = { trackId: null, trackName: null, artistName: null };
-
-    // Track ID: present in the URL when on a track page
-    // e.g. open.spotify.com/track/4iV5W9uYEdYUVa79Axb7Rh
-    const match = window.location.pathname.match(/\/track\/([A-Za-z0-9]+)/);
-    if (match) {
-        info.trackId = match[1];
-    }
+    const info = { trackName: null, artistName: null, albumArt: null };
 
     // Song name: the now-playing footer widget
     const titleEl = document.querySelector('[data-testid="context-item-link"]');
@@ -40,33 +31,35 @@ function parseSpotifyPage() {
         .join(', ');
     }
 
-    console.log(info.trackName)
+    const artEl = document.querySelector('[data-testid="cover-art-image"]');
+    if (artEl) info.albumArt = artEl.src;
+
+    console.log(`Track id: ${info.trackName}`);
     return info;
 }
 
 async function handleSongChange() {
     if (!wasmModule) return;
 
-    const { trackId, trackName, artistName } = parseSpotifyPage();
+    const { trackName, artistName, albumArt } = parseSpotifyPage();
 
     // Deduplicate — Spotify's SPA fires many mutations per navigation
-    if (!trackName || trackId === lastTrackId) return;
-    lastTrackId = trackId;
+    if (!trackName || (trackName === lastTrackName && artistName === lastTrackArtist)) return;
+    lastTrackName = trackName;
+    lastTrackArtist = artistName;
 
     try {
         // Process through Rust/WASM for validation + normalization
         const songInfo = wasmModule.process_song_data(
-            trackId ?? '',
             trackName ?? '',
             artistName ?? '',
-            'spotify'
+            albumArt ?? ''
         );
 
         const payload = {
-            trackId: songInfo.track_id,
-            trackName: songInfo.track_name,
-            artistName: songInfo.artist_name,
-            platform: songInfo.platform,
+            track_name: songInfo.trackName,
+            artist_name: songInfo.artistName,
+            albumArt: albumArt
         };
 
         console.log('[Content Spotify] Sending to background:', payload);

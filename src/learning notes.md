@@ -29,6 +29,9 @@ The Goal of this project is to create a new song recommendation system based on 
 - fixed popup.html to include a button to show recommendations rather than showing automatically
 - created manifest.json because edge can't handle manifest_cr :/ 
 
+3/20/2026
+- main issue is content.js is not being recognized as a valid content script
+
 
 **Things needed to be implemented** 
 - The current song information will be automatically parsed 
@@ -66,3 +69,4 @@ Why do I need background :/ ?
 Probably going to keep background.js just so that you can run the search switch tabs etc 
 
 Apparently if "activeTab" is in permissions, there's no need to have host_permissions need to look more into that one
+

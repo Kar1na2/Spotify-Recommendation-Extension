@@ -17,10 +17,6 @@
         "service_worker": "js/background.js",
         "type": "module"
     },
-    "host_permissions": [
-        "https://*.spotify.com/*",
-        "https://*.googleusercontent.com/*"
-    ],
     "content_security_policy": {
         "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
     },
@@ -31,18 +27,21 @@
     ],
     "web_accessible_resources": [
         {
-        "matches": [
-            "<all_urls>"
-        ],
-        "resources": [
-            "pkg/wasm_core.js",
-            "pkg/wasm_core_bg.wasm"
-        ]
+            "matches": [
+                "https://open.spotify.com/*"
+            ],
+            "resources": [
+                "pkg/wasm_core.js",
+                "pkg/wasm_core_bg.wasm"
+            ]
         }
+    ],
+    "host_permissions": [
+            "*://*.spotify.com/*"
     ],
     "content_scripts": [
         {
-            "matches": ["https://open.spotify.com/*"],
+            "matches": ["*://*.spotify.com/*"],
             "js": ["js/content.js"],
             "run_at": "document_idle"
         }
