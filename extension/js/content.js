@@ -40,6 +40,7 @@ function parseSpotifyPage() {
         .join(', ');
     }
 
+    console.log(info.trackName)
     return info;
 }
 
@@ -82,6 +83,7 @@ async function handleSongChange() {
 }
 
 async function init() {
+    console.log("content.js is loaded")
     wasmModule = await loadWasm();
 
     // Initial parse (in case user landed on a track page directly)
