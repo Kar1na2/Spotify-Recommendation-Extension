@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotOn</title>
+    <style>
+        /* Import a clean, modern font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --hover-bg: #2a2a2a;
+            --text-main: #ffffff;
+            --text-sub: #b3b3b3;
+            --spoton-accent: #1DB954; /* The green from your icon */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            width: 350px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header containing Logo and Title */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid #333;
+        }
+
+        .header img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        /* Main Content Area */
+        .container {
+            padding: 16px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-sub);
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Now Playing Card */
+        .now-playing {
+            display: flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--spoton-accent);
+        }
+
+        .album-art {
+            width: 48px;
+            height: 48px;
+            background-color: #333;
+            border-radius: 4px;
+            margin-right: 12px;
+            object-fit: cover;
+        }
+
+        .track-info {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .track-title {
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 4px;
+        }
+
+        .track-artist {
+            font-size: 12px;
+            color: var(--text-sub);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Recommendations List */
+        .rec-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .rec-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .rec-item:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .rec-item-left {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .rec-item-left img {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            margin-right: 12px;
+        }
+
+        /* Action Buttons */
+        .play-btn {
+            background: none;
+            border: none;
+            color: var(--spoton-accent);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 16px;
+            border-top: 1px solid #333;
+        }
+
+        .refresh-btn {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+
+        .refresh-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="../assets/icon32.png" alt="SpotOn Logo">
+        <h1>SpotOn</h1>
+    </div>
+
+<div class="container">
+        <div class="section-title">Based on currently playing</div>
+        <div class="now-playing">
+            <img class="album-art" id="current-album-art" src="../assets/icon32.png" alt="Album Art">
+            <div class="track-info">
+                <span class="track-title" id="current-title">Loading track...</span>
+                <span class="track-artist" id="current-artist">Waiting for Spotify...</span>
+            </div>
+        </div>
+
+        <div class="section-title">SpotOn Recommendations</div>
+        <div class="rec-list" id="recommendations"></div>
+    </div>
+
+    <div class="footer">
+        <button class="refresh-btn" id="refresh-recs">Refresh Recommendations</button>
+    </div>
+
+    </body>
+</html>

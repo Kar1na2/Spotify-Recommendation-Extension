@@ -16,6 +16,10 @@ The Goal of this project is to create a new song recommendation system based on 
 - set up the struct for song information as well as Cargo.toml
 - write up learning notes
 
+[3b783eb] 
+- set up the manifest files as well as the appropriate project structure
+
+
 
 
 **Things needed to be implemented** 

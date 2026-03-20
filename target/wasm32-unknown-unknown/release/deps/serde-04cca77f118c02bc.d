@@ -1,0 +1,14 @@
+/home/usr/dev/Spotify-Recommendation-Extension/target/wasm32-unknown-unknown/release/deps/serde-04cca77f118c02bc.d: /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/usr/dev/Spotify-Recommendation-Extension/target/wasm32-unknown-unknown/release/build/serde-401cb68956741756/out/private.rs
+
+/home/usr/dev/Spotify-Recommendation-Extension/target/wasm32-unknown-unknown/release/deps/libserde-04cca77f118c02bc.rlib: /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/usr/dev/Spotify-Recommendation-Extension/target/wasm32-unknown-unknown/release/build/serde-401cb68956741756/out/private.rs
+
+/home/usr/dev/Spotify-Recommendation-Extension/target/wasm32-unknown-unknown/release/deps/libserde-04cca77f118c02bc.rmeta: /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/usr/dev/Spotify-Recommendation-Extension/target/wasm32-unknown-unknown/release/build/serde-401cb68956741756/out/private.rs
+
+/home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/usr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/usr/dev/Spotify-Recommendation-Extension/target/wasm32-unknown-unknown/release/build/serde-401cb68956741756/out/private.rs:
+
+# env-dep:OUT_DIR=/home/usr/dev/Spotify-Recommendation-Extension/target/wasm32-unknown-unknown/release/build/serde-401cb68956741756/out

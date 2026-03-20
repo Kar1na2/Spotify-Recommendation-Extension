@@ -1,6 +1,4 @@
 use wasm_bindgen::prelude::*;
-#[cfg(debug_assertions)]
-use wasm_bindgen_test::__rt::console_error;
 use web_sys::console;
 use serde::{Deserialize, Serialize};
 use serde_json;
