@@ -30,8 +30,12 @@ The Goal of this project is to create a new song recommendation system based on 
 - created manifest.json because edge can't handle manifest_cr :/ 
 
 3/20/2026
--
+- Bug fixes 
+    - [when song changes, there is no update on frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/3) 
+    - [name and artist not showing in frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/2)
+    - [content.js not running when site is loaded](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/1)
 
+---------------------------------------
 
 **Things needed to be implemented** 
 - The current song information will be automatically parsed 
