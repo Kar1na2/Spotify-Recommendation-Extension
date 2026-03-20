@@ -10,7 +10,7 @@ The Goal of this project is to create a new song recommendation system based on 
 
 *This will be updated as the project goes on* 
 
-**<u>3/19/2026</u>**
+<u>3/19/2026</u>
 
 [3926b39]
 - do an initial commit sending all files to the repository
