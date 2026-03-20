@@ -30,7 +30,7 @@ The Goal of this project is to create a new song recommendation system based on 
 - created manifest.json because edge can't handle manifest_cr :/ 
 
 3/20/2026
-- main issue is content.js is not being recognized as a valid content script
+-
 
 
 **Things needed to be implemented** 

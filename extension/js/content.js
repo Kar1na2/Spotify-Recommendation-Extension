@@ -43,7 +43,6 @@ async function handleSongChange() {
 
     const { trackName, artistName, albumArt } = parseSpotifyPage();
 
-    // Deduplicate — Spotify's SPA fires many mutations per navigation
     if (!trackName || (trackName === lastTrackName && artistName === lastTrackArtist)) return;
     lastTrackName = trackName;
     lastTrackArtist = artistName;
@@ -57,8 +56,8 @@ async function handleSongChange() {
         );
 
         const payload = {
-            track_name: songInfo.trackName,
-            artist_name: songInfo.artistName,
+            track_name: songInfo.track_name,
+            artist_name: songInfo.artist_name,
             albumArt: albumArt
         };
 
@@ -76,16 +75,34 @@ async function handleSongChange() {
 }
 
 async function init() {
-    console.log("content.js is loaded")
+    console.log("content.js is loaded");
     wasmModule = await loadWasm();
 
     // Initial parse (in case user landed on a track page directly)
     await handleSongChange();
 
-    // Watch for DOM changes — Spotify is a SPA, songs change without full reload
-    const observer = new MutationObserver(() => handleSongChange());
-    observer.observe(document.body, { childList: true, subtree: true });
+    // Helper function to set up the observer
+    const setupObserver = () => {
+        const titleEl = document.querySelector('title');
+        
+        if (titleEl) {
+            const observer = new MutationObserver(() => {
+                // Add a small delay. The title updates instantly, but the 
+                // album art image might take a few milliseconds to render in the DOM.
+                setTimeout(() => handleSongChange(), 500);
+            });
+            
+            // Observe only the title element for changes
+            observer.observe(titleEl, { childList: true });
+            console.log("[SpotOn] Listening for track changes...");
+        } else {
+            // If the title tag isn't in the DOM yet, try again in 1 second
+            setTimeout(setupObserver, 1000);
+        }
+    };
+
+    setupObserver();
 }
 
-init();
+// Ensure you only call init() once!
 init().catch(err => console.error('[SpotOn] init failed:', err));

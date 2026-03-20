@@ -13,6 +13,6 @@ async function currentSong() {
 
 function displaySong(song) {
     document.getElementById('current-album-art').src = song.albumArt;
-    document.getElementById('current-title').textContent = song.trackName;
-    document.getElementById('current-artist').textContent = song.artistName;
+    document.getElementById('current-title').textContent = song.track_name;
+    document.getElementById('current-artist').textContent = song.artist_name;
 }
