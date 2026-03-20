@@ -1,0 +1,48 @@
+{ 
+    "manifest_version": 3,
+    "name": "Spotify Recommendation Extension",
+    "short_name": "SpotOn",
+    "version": "0.1.0",
+    "description": "Recommends a new song tailored more towards user preference.",
+    "author": "@Kar1na",
+
+    "action": {
+        "default_popup": "js/popup.html",
+        "deafult_title": "SpotOn",
+        "deafult_icon": {
+            "16": "assests/icon16.png",
+            "32": "assests/icon32.png"
+        }
+    },
+
+    "background": {
+        "service_worker": "js/background.js",
+        "type": "module"
+    },
+
+    "host_permission": [
+        "https://open.spotify.com/*"
+    ],
+
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-serc 'self';"
+    },
+
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "https://open.spotify.com/*"
+            ],
+            "resources": [
+                "pkg/wasm_core.js",
+                "pkg/wasm_core_bg.wasm"
+            ]
+        }
+    ]
+}

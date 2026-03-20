@@ -2,19 +2,21 @@
 
 Since this is my first project using GenAI I will be using markdown file as a way to verbose my thoughts 
 
-#### **Part 1** 
-##### **Goal** 
+### **Goal** 
 
 The Goal of this project is to create a new song recommendation system based on a current song playing on Spotify so that it can tailor the needs of the user better than the current recommendation system Spotify is using 
 
-##### **Timeline** 
+### **Timeline** 
 
 *This will be updated as the project goes on* 
 
 3/19/2026 
-- Get the framework of the extension working 
-- Be able to parse the current song that's playing on Spotify (later youtube as well) 
-- Have a mock server up that the extension can send that song over to the mock server 
+[3926b39]
+- do an initial commit sending all files to the repository
+- set up the struct for song information as well as Cargo.toml
+- write up learning notes
+
+
 
 **Things needed to be implemented** 
 - The current song information will be automatically parsed 
@@ -33,4 +35,22 @@ The Goal of this project is to create a new song recommendation system based on 
     - Will parse the fields and based on the fields fetch values from database 
     - Will go through the songs maybe use GenAI (?) or some other methods to get the top 3 / 5 songs 
         - This will be changed to make the algorithm more efficient etc
-    - Will send it back to chrome and it will do something with it still thinking of the frontend design for that 
+    - Will send it back to chrome and it will do something with it still thinking of the frontend design for that
+- Do everything but for Youtube as well afterwards 
+
+### ***SCRIBBLES*** - Random thoughts I need to write out or else I'll forget 
+
+Chrome Extension --> Server json format 
+```
+{ 
+    "name": String,
+    "artist": String,
+    "platform": String,
+    "inputs": int,          # 0 - overall, 1 - instrumental, 2 - lyrics
+}
+```
+
+Why do I need background :/ ? 
+Probably going to keep background.js just so that you can run the search switch tabs etc 
+
+Apparently if "activeTab" is in permissions, there's no need to have host_permissions need to look more into that one
