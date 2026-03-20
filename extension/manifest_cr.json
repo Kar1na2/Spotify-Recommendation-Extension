@@ -44,5 +44,13 @@
                 "pkg/wasm_core_bg.wasm"
             ]
         }
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["https://open.spotify.com/*"],
+            "js": ["js/content.js"],
+            "run_at": "document_idle"
+        }
     ]
 }
