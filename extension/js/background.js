@@ -18,5 +18,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         sendResponse({ song: currentSong });
     }
 
+    if (message.type === 'GET_RECOMMENDATIONS') {
+        console.log("GET_RECOMMENDATIONS message recevied")
+        const preference = message.val;
+    }
+
     return true;
 });

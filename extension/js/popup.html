@@ -209,6 +209,47 @@
         .refresh-btn:active {
             transform: scale(0.95);
         }
+
+        /* Preference Dropdown Styles */
+        .preference-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--card-bg);
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .preference-container label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-sub);
+        }
+
+        .preference-dropdown {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid #333;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .preference-dropdown:focus {
+            border-color: var(--spoton-accent);
+        }
+        
+        /* Optional: Style the dropdown options for supported browsers */
+        .preference-dropdown option {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+        }
     </style>
 </head>
 <body>
@@ -227,7 +268,14 @@
                 <span class="track-artist" id="current-artist">Waiting for Spotify...</span>
             </div>
         </div>
-
+        <div class="preference-container">
+            <label for="similarity-preference">Match focus:</label>
+            <select id="similarity-preference" class="preference-dropdown">
+                <option value="overall">Overall</option>
+                <option value="instrumental">Instrumental</option>
+                <option value="lyrics">Lyrics</option>
+            </select>
+        </div>
         <button class="find-similar-btn" id="find-similar-btn">Find me something similar</button>
         <div class="rec-list" id="recommendations"></div>
     </div>

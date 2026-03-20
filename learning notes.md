@@ -36,6 +36,7 @@ The Goal of this project is to create a new song recommendation system based on 
     - [when song changes, there is no update on frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/3) 
     - [name and artist not showing in frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/2)
     - [content.js not running when site is loaded](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/1)
+- 
 
 ---------------------------------------
 
@@ -82,3 +83,8 @@ Apparently if "activeTab" is in permissions, there's no need to have host_permis
 
 content.js -> "SONG_DETECTED" with payload 
 background.js -> receives message and payload -> relay payload to popup.js
+
+The server should get top 15 songs that matches the preference of the user 
+-> returns 15 songs shows first 3 
+-> refresh recommendations up to 15 
+-> if unsatisfied until then then it invokes the same call again but with a blacklist 
