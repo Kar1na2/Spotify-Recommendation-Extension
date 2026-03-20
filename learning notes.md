@@ -10,7 +10,8 @@ The Goal of this project is to create a new song recommendation system based on 
 
 *This will be updated as the project goes on* 
 
-3/19/2026 
+**<u>3/19/2026</u>**
+
 [3926b39]
 - do an initial commit sending all files to the repository
 - set up the struct for song information as well as Cargo.toml
@@ -29,7 +30,8 @@ The Goal of this project is to create a new song recommendation system based on 
 - fixed popup.html to include a button to show recommendations rather than showing automatically
 - created manifest.json because edge can't handle manifest_cr :/ 
 
-3/20/2026
+**<u>3/20/2026</u>**
+
 - Bug fixes 
     - [when song changes, there is no update on frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/3) 
     - [name and artist not showing in frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/2)
