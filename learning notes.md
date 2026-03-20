@@ -10,7 +10,7 @@ The Goal of this project is to create a new song recommendation system based on 
 
 *This will be updated as the project goes on* 
 
-<u>3/19/2026</u>
+**<u>3/19/2026</u>**
 
 [3926b39]
 - do an initial commit sending all files to the repository
@@ -72,8 +72,11 @@ Chrome Extension --> Server json format
 ```
 
 Why do I need background :/ ? 
+
+^ answer is background is the middleground between content.js and popup.js 
+
 Probably going to keep background.js just so that you can run the search switch tabs etc 
-^ background is the middleground between content.js and popup.js 
+
 
 Apparently if "activeTab" is in permissions, there's no need to have host_permissions need to look more into that one
 
