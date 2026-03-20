@@ -106,6 +106,29 @@
             text-overflow: ellipsis;
         }
 
+        /* Find Similar Button */
+        .find-similar-btn {
+            background-color: var(--spoton-accent);
+            color: var(--bg-color);
+            border: none;
+            padding: 12px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 16px;
+            transition: transform 0.1s ease, background-color 0.2s ease;
+        }
+
+        .find-similar-btn:hover {
+            background-color: #1ed760; /* Slightly brighter green on hover */
+        }
+
+        .find-similar-btn:active {
+            transform: scale(0.97);
+        }
+
         /* Recommendations List */
         .rec-list {
             display: flex;
@@ -195,7 +218,7 @@
         <h1>SpotOn</h1>
     </div>
 
-<div class="container">
+    <div class="container">
         <div class="section-title">Based on currently playing</div>
         <div class="now-playing">
             <img class="album-art" id="current-album-art" src="../assets/icon32.png" alt="Album Art">
@@ -205,13 +228,13 @@
             </div>
         </div>
 
-        <div class="section-title">SpotOn Recommendations</div>
+        <button class="find-similar-btn" id="find-similar-btn">Find me something similar</button>
         <div class="rec-list" id="recommendations"></div>
     </div>
 
     <div class="footer">
         <button class="refresh-btn" id="refresh-recs">Refresh Recommendations</button>
     </div>
-
-    </body>
+    <script src=""popup.js"></script>
+</body>
 </html>
