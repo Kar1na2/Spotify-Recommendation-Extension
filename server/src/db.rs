@@ -77,7 +77,7 @@ pub async fn table_active(
 
         attempts += 1;
         if attempts >= max_attempts {
-            return Err("Timed out waiting for talbe to become ACTIVE".into());
+            return Err("Timed out waiting for table to become ACTIVE".into());
         }
 
         sleep (Duration::from_secs(delay_seconds)).await;

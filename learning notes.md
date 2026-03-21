@@ -1,7 +1,16 @@
 ### **Description** 
 
 Since this is my first project using GenAI I will be using markdown file as a way to verbose my thoughts 
-Also I'm NOT going to focus on code quality at all. At least until verion 1.0 has been released then I will refactor code for quality assurance
+Also I'm NOT going to focus on code quality at all. At least until verion 1.0 has been released then I will refactor code for quality 
+
+### **Motivation** 
+
+The motivation behind this project is that when I look for songs that can give me the same euphoric feeling as the one I'm currently listening to, for example: Tame Impala's Dracula descending cord at around 43-45 second mark was appealing to me, but when I look at spotify's new song recommmendation all of them are quite far away from Dracula in general :(
+
+When looking more into Spotify's recommendation algorithm I have found the following 
+- They measure based on other people's preferences. It finds a group of people that listened to the same song let's use Drcaula as an example again, Spotify will look at what songs did that group of people also listen to (no gurantee that it's similar to the song!)
+- Uses NLP models to read music blogs, news articles, social media, etc to describe the artist and the song even more. Although there is no criticism in that area, a beauty of music is both the listener's understanding of the artist's intentions, but also the listener's ability to create their own sensation, their own meaning after listening to a song. Some song can be incredibly sad to an individual while the other can have a sense of healing to it
+- Personal preference: This is something that me and other Spotify Users haven't been able to quite experience yet, if I skip a lot of songs and next time I press shuffle or use the DJ it recommends the SAME song again. Later features of this project would be in focus of a proper engagement / preference so that it doesn't recommend songs that you would likely skip over
 
 ### **Goal** 
 
