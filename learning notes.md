@@ -1,6 +1,7 @@
 ### **Description** 
 
 Since this is my first project using GenAI I will be using markdown file as a way to verbose my thoughts 
+Also I'm NOT going to focus on code quality at all. At least until verion 1.0 has been released then I will refactor code for quality assurance
 
 ### **Goal** 
 
@@ -36,7 +37,10 @@ The Goal of this project is to create a new song recommendation system based on 
     - [when song changes, there is no update on frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/3) 
     - [name and artist not showing in frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/2)
     - [content.js not running when site is loaded](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/1)
-- 
+
+[26ec847]
+- added in UI feature to connect frontend with the server 
+
 
 ---------------------------------------
 
@@ -88,3 +92,27 @@ The server should get top 15 songs that matches the preference of the user
 -> returns 15 songs shows first 3 
 -> refresh recommendations up to 15 
 -> if unsatisfied until then then it invokes the same call again but with a blacklist 
+
+Login feature that takes into account into the following 
+- what the user liked / disliked 
+- what songs the user kept listening to (frequency of the new song will be tracked for the following 2 weeks?) 
+- a site that the user can go to to access the new songs and set preference with interest / not interested buttons 
+
+cross-origin 
+- origins consist of 
+    - Protocol 
+    - Domain
+    - Port
+
+usr@83c:~$ aws configure list --profile dev
+NAME       : VALUE                    : TYPE             : LOCATION
+profile    : dev                      : manual           : --profile
+access_key : ****************pers     : shared-credentials-file :
+secret_key : ****************pers     : shared-credentials-file :
+region     : us-west-2                : config-file      : ~/.aws/config
+
+created a profile dev and will be setting it as a local enviornment variable only instead of global, will later see if I need to change
+
+Box<dyn std::error::Error> 
+Error isn't necessarily a type so a dynamic trait is needed 
+dynamic trait has no fixed size so Box fills it in
