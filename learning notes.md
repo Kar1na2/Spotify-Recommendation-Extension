@@ -11,7 +11,7 @@ The Goal of this project is to create a new song recommendation system based on 
 
 *This will be updated as the project goes on* 
 
-**<u>3/19/2026</u>**
+#### **3/19/2026**
 
 [3926b39]
 - do an initial commit sending all files to the repository
@@ -31,7 +31,7 @@ The Goal of this project is to create a new song recommendation system based on 
 - fixed popup.html to include a button to show recommendations rather than showing automatically
 - created manifest.json because edge can't handle manifest_cr :/ 
 
-**<u>3/20/2026</u>**
+#### **3/20/2026**
 
 - Bug fixes 
     - [when song changes, there is no update on frontend](https://github.com/Kar1na2/Spotify-Recommendation-Extension/issues/3) 
@@ -44,7 +44,7 @@ The Goal of this project is to create a new song recommendation system based on 
 [3ad7649] 
 - Initialized Server with all the files 
 
-**3/21/2026**
+#### **3/21/2026**
 - Aim: 
     - Fix the local dynamoDB connection with server
     - Once connection is made and can start reading and writing from database proceed to figure out what to do with MIDI
