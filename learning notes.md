@@ -41,6 +41,14 @@ The Goal of this project is to create a new song recommendation system based on 
 [26ec847]
 - added in UI feature to connect frontend with the server 
 
+[3ad7649] 
+- Initialized Server with all the files 
+
+**3/21/2026**
+- Aim: 
+    - Fix the local dynamoDB connection with server
+    - Once connection is made and can start reading and writing from database proceed to figure out what to do with MIDI
+
 
 ---------------------------------------
 
